@@ -22,9 +22,9 @@ jobs:
       # Copy output to workspace
       - name: Copy output
         run: |
+          ls
           mkdir -p ${{ github.workspace }}/workspace
-          cp foo.txt ${{ github.workspace }}/workspace/
-          cp bar.txt ${{ github.workspace }}/workspace/
+          cp -rv ./ ${{ github.workspace }}/workspace/
 
       # Upload the output as a release artifact
       - name: Release
