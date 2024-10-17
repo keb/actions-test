@@ -18,8 +18,10 @@ jobs:
       - name: Copy output
         run: |
           ls
-          mkdir -p ${{ github.workspace }}/workspace
-          cp -rv ./ ${{ github.workspace }}/workspace/
+          mkdir -p ${{ github.workspace }}/workspace/
+          cp foo.txt ${{ github.workspace }}/workspace/
+          cp bar.txt ${{ github.workspace }}/workspace/
+          cp -rv nested ${{ github.workspace }}/workspace/
 
       # Upload the output as a release artifact
       - name: Release
